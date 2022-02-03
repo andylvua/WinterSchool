@@ -1,6 +1,7 @@
 # WinterSchool
 **This is a repository for university winter school projects with Zenoviy Veres**
 
+> Contributed: [Oles Pasirskyi](https://github.com/wertylu)
 ## Fish Shop. Lesson 1-3
 
 > Fish Shop classes diagram. Created with [diagrams.net](https://www.diagrams.net/) using UML language.
@@ -24,7 +25,7 @@ Here, please enter what will be the sorting key.
 
 <br /> 
 
-> :warning: The only allowed values for **sorting_key** is **_name_**, **_price_** and **_weight_**. Otherwise, the program will raise **ValueError**.
+> :warning: The only allowed values for **sorting_key** are **_name_**, **_price_** and **_weight_**. Otherwise, the program will raise **ValueError**.
 
 ## Clouds. Lesson 4
 
