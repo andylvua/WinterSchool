@@ -13,6 +13,8 @@ class Fish:
 
 class FishShop:
     list_of_fishes = []
+    sorting_reverse = None
+    sorting_key = None
 
     def add_fish(self) -> None:
         while True:
@@ -49,8 +51,15 @@ class FishShop:
 
         self.list_of_fishes.append([fish_name, fish_price_in_uah_per_kilo, fish_weight])
 
-    def get_fish_names_sorted_by_price(self):
-        print("Sorted List based on price: %s" % (sorted(self.list_of_fishes, key=itemgetter(1), reverse=True)))
+    def get_sorted_fish_list(self):
+        if self.sorting_key == "name":
+            self.sorting_key = 0
+        elif self.sorting_key == "price":
+            self.sorting_key = 1
+        elif self.sorting_key == "weight":
+            self.sorting_key = 2
+        print("Sorted List of fishes: %s" % (sorted(self.list_of_fishes, key=itemgetter(self.sorting_key),
+                                                    reverse=self.sorting_reverse)))
 
     def sublist_search(self, searched_element) -> bool:
         return any(searched_element in sublist for sublist in self.list_of_fishes)
@@ -145,18 +154,29 @@ class Buyer:
 
 
 def main():
+    if FishShop.sorting_key not in ('name', 'price', 'weight'):
+        print("Check sorting_key value in __main__")
+        raise ValueError()
+
     shop = FishShop()
 
     shop.add_fish()
     shop.add_fish()
     shop.add_fish()
 
-    shop.get_fish_names_sorted_by_price()
+    print("Sorting by", FishShop.sorting_key, end=' ')
+    if FishShop.sorting_reverse:
+        print("in decreasing order")
+    else:
+        print("in increasing order")
+
+    shop.get_sorted_fish_list()
 
     shop.sell_fish()
     shop.cast_out_old_fish()
 
 
 if __name__ == '__main__':
+    FishShop.sorting_reverse = True  # "True" if you want from largest to smallest
+    FishShop.sorting_key = "price"  # What do you want to sort fish_list by? (name, price or weight)
     main()
-    
