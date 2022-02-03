@@ -26,7 +26,10 @@ class FishShop:
         while True:
             try:
                 fish_price_in_uah_per_kilo = float(input("Enter price in UAH per kg: "))
-                break
+                if fish_price_in_uah_per_kilo > 0:
+                    break
+                else:
+                    print("Price should be greater than 0, try again")
             except ValueError:
                 fish_price_in_uah_per_kilo = None
                 print("Price should be a float value, try again")
@@ -35,7 +38,10 @@ class FishShop:
         while True:
             try:
                 fish_weight = float(input("Enter fish weight: "))
-                break
+                if fish_weight > 0:
+                    break
+                else:
+                    print("Weight should be greater than 0, try again")
             except ValueError:
                 fish_weight = None
                 print("Weight should be a float value, try again")
@@ -64,7 +70,10 @@ class FishShop:
         while True:
             try:
                 weight = float(input("How much do you want to sell? "))
-                break
+                if weight > 0:
+                    break
+                else:
+                    print("Weight should be greater than 0, try again")
             except ValueError:
                 weight = None
                 print("Weight should be a float value, try again")
@@ -97,7 +106,10 @@ class FishShop:
         while True:
             try:
                 weight = float(input("How much do you want to cast out? "))
-                break
+                if weight > 0:
+                    break
+                else:
+                    print("Weight should be greater than 0, try again")
             except ValueError:
                 weight = None
                 print("Weight should be a float value, try again")
