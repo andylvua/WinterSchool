@@ -1,6 +1,7 @@
 # WinterSchool
 **This is a repository for university winter school projects with Zenoviy Veres**
 
+> Contributed: [Oles Pasirskyi](https://github.com/wertylu)
 ## Fish Shop. Lesson 1-3
 
 > Fish Shop classes diagram. Created with [diagrams.net](https://www.diagrams.net/) using UML language.
