@@ -190,6 +190,6 @@ def main():
 
 
 if __name__ == '__main__':
-    FishShop.sorting_reverse = True  # "True" if you want from largest to smallest
-    FishShop.sorting_key = "piece"  # What do you want to sort fish_list by? (name, price or weight)
+    FishShop.sorting_reverse = True      # "True" if you want from largest to smallest, "False" to reverse.
+    FishShop.sorting_key = "price"       # What do you want to sort fish_list by? (name, price or weight)!
     main()
