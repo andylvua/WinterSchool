@@ -1,8 +1,21 @@
+""" FishShop.py
+This program provides you with a simple functionality for fish shop management.
+Here you can add fish to the store, sort them as you wish,
+sell them, or even cast them out if they are expired.
+
+For further information please see our GitHub repository:
+https://github.com/andylvua/WinterSchool
+"""
+
 from operator import itemgetter
+
+__author__ = "Andrew Yaroshevych and Oles Pasirskyi"
+__version__ = "1.1"
+__email__ = "andrii.yaroshevych.ir.2021@lpnu.ua, oles.pasirskyi.ir.2021@lpnu.ua"
+__status__ = "Production"
 
 
 class Fish:
-
     def __init__(self) -> None:
         self.name = input("Enter fish name: ")
         self.price_in_uah_per_kilo = input("Enter price in UAH per kg: ")
@@ -178,5 +191,5 @@ def main():
 
 if __name__ == '__main__':
     FishShop.sorting_reverse = True  # "True" if you want from largest to smallest
-    FishShop.sorting_key = "price"  # What do you want to sort fish_list by? (name, price or weight)
+    FishShop.sorting_key = "piece"  # What do you want to sort fish_list by? (name, price or weight)
     main()
