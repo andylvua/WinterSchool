@@ -55,7 +55,7 @@ class FishShop:
     def sublist_search(self, searched_element) -> bool:
         return any(searched_element in sublist for sublist in self.list_of_fishes)
 
-    def sell_fish(self):
+    def sell_fish(self, shop=None):
         while True:
             fish_name = str(input("Which fish do you want to sell? "))
             if fish_name.replace(" ", "").isalpha():
@@ -91,7 +91,7 @@ class FishShop:
                 print("Revenue is: " + str(revenue))
                 print(self.list_of_fishes)
 
-    def cast_out_old_fish(self):
+    def cast_out_old_fish(self, shop=None):
         while True:
             fish_name = str(input("Which fish do you want to cast out? "))
             if fish_name.replace(" ", "").isalpha():
@@ -144,13 +144,19 @@ class Buyer:
         pass
 
 
-shop = FishShop()
+def main():
+    shop = FishShop()
 
-shop.add_fish()
-shop.add_fish()
-shop.add_fish()
+    shop.add_fish()
+    shop.add_fish()
+    shop.add_fish()
 
-shop.get_fish_names_sorted_by_price()
+    shop.get_fish_names_sorted_by_price()
 
-shop.sell_fish()
-shop.cast_out_old_fish()
+    shop.sell_fish()
+    shop.cast_out_old_fish()
+
+
+if __name__ == '__main__':
+    main()
+    
