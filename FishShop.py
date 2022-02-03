@@ -70,14 +70,11 @@ class FishShop:
                 print("Weight should be a float value, try again")
                 continue
 
-        counter = len(self.list_of_fishes)
-
         for i in range(len(self.list_of_fishes)):
             if self.list_of_fishes[i][0] == fish_name:
-                counter -= 1
-                self.list_of_fishes[i][2] -= weight
-                if self.list_of_fishes[i][2] < 0:
-                    self.list_of_fishes[i][2] += weight
+                if self.list_of_fishes[i][2] > weight:
+                    self.list_of_fishes[i][2] -= weight
+                else:
                     print("There is not enough fish to sell, try again!")
                     self.sell_fish()
 
@@ -89,7 +86,10 @@ class FishShop:
         while True:
             fish_name = str(input("Which fish do you want to cast out? "))
             if fish_name.replace(" ", "").isalpha():
-                break
+                if shop.sublist_search(fish_name):
+                    break
+                else:
+                    print("Fish is not found, please try again!")
             else:
                 print("Name should contain only letters, please try again!")
                 continue
@@ -103,21 +103,14 @@ class FishShop:
                 print("Weight should be a float value, try again")
                 continue
 
-        counter = len(self.list_of_fishes)
-
         for i in range(len(self.list_of_fishes)):
             if self.list_of_fishes[i][0] == fish_name:
-                counter -= 1
-                if self.list_of_fishes[i][2] - weight >= 0:
+                if self.list_of_fishes[i][2] > weight:
                     self.list_of_fishes[i][2] -= weight
                     print(self.list_of_fishes)
                 else:
                     print("There is not enough fish to cast out, try again!")
                     self.cast_out_old_fish()
-
-        if counter == len(self.list_of_fishes):
-            print("Fish is not found, try again!")
-            self.cast_out_old_fish()
 
 
 class Seller:
