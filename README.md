@@ -24,7 +24,7 @@ Here, please enter what will be the sorting key.
 
 <br /> 
 
-> :warning: The only allowed values for **sorting_key** is **_name_**, **_price_** and **_weight_**. Otherwise, the program will raise **ValueError**.
+> :warning: The only allowed values for **sorting_key** are **_name_**, **_price_** and **_weight_**. Otherwise, the program will raise **ValueError**.
 
 ## Clouds. Lesson 4
 
