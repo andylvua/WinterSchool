@@ -1,5 +1,5 @@
 # WinterSchool
-> ### This is a repository for university winter school projects.
+**This is a repository for university winter school projects.**
 
 ## Fish Shop. Lesson 1-3
 
@@ -7,6 +7,7 @@
 >
 >![](FishShop.drawio.png)
 
+**To find project code, please see [FishShop.py](FishShop.py) file.**
 ## Clouds. Lesson 4
 
 > Cloud structure diagram. Represents simple explanation of how servers work and how they are managed.
