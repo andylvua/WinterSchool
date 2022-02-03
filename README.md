@@ -1,5 +1,5 @@
 # WinterSchool
-**This is a repository for university winter school projects.**
+**This is a repository for university winter school projects with Zenoviy Veres**
 
 ## Fish Shop. Lesson 1-3
 
