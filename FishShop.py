@@ -10,7 +10,7 @@ from operator import itemgetter
 import inflect
 
 __author__ = "Andrew Yaroshevych and Oles Pasirskyi"
-__version__ = "1.1"
+__version__ = "2.0"
 __email__ = "andrii.yaroshevych.ir.2021@lpnu.ua, oles.pasirskyi.ir.2021@lpnu.ua"
 __status__ = "Production"
 
@@ -242,6 +242,6 @@ def main():
 
 
 if __name__ == '__main__':
-    FishShop.sorting_reverse = True  # "True" if you want from largest to smallest, "False" to reverse.
-    FishShop.sorting_key = "price"   # What do you want to sort fish_list by? (name, price or weight)!
+    FishShop.sorting_reverse = True      # "True" if you want from largest to smallest, "False" to reverse.
+    FishShop.sorting_key = "price"       # What do you want to sort fish_list by? (name, price or weight)!
     main()
