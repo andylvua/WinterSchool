@@ -2,10 +2,13 @@
 This program provides you with a simple functionality for fish shop management.
 Here you can add fish to the store, sort them as you wish,
 sell them, or even cast them out if they are expired.
+Also, you can be a buyer. See your available cash and fishes in a bag.
+
 For further information please see our GitHub repository:
 https://github.com/andylvua/WinterSchool
 """
 
+import time
 from operator import itemgetter
 import inflect
 
@@ -44,10 +47,10 @@ class FishShop:
                 if fish_price_in_uah_per_kilo > 0:
                     break
                 else:
-                    print("Price should be greater than 0, try again")
+                    print("Price should be greater than 0, try again!")
             except ValueError:
                 fish_price_in_uah_per_kilo = None
-                print("Price should be a float value, try again")
+                print("Price should be a float value, try again!")
                 continue
 
         while True:
@@ -56,10 +59,10 @@ class FishShop:
                 if fish_weight > 0:
                     break
                 else:
-                    print("Weight should be greater than 0, try again")
+                    print("Weight should be greater than 0, try again!")
             except ValueError:
                 fish_weight = None
-                print("Weight should be a float value, try again")
+                print("Weight should be a float value, try again!")
                 continue
 
         self.list_of_fishes.append([fish_name, fish_price_in_uah_per_kilo, fish_weight])
@@ -102,17 +105,17 @@ class FishShop:
                 if weight > 0:
                     break
                 else:
-                    print("Weight should be greater than 0, try again")
+                    print("Weight should be greater than 0, try again!")
             except ValueError:
                 weight = None
-                print("Weight should be a float value, try again")
+                print("Weight should be a float value, try again!")
                 continue
 
         for i in range(len(self.list_of_fishes)):
             if self.list_of_fishes[i][0] == fish_name:
                 if self.list_of_fishes[i][2] > weight:
                     self.list_of_fishes[i][2] -= weight
-                    print("Casted out successfully.")
+                    print("\nCasted out successfully.")
                     print("List of fishes after casting out: %s" % self.list_of_fishes + "\n")
                 else:
                     print("There is not enough fish to cast out, try again!")
@@ -138,10 +141,10 @@ class Seller(FishShop):
                 if weight > 0:
                     break
                 else:
-                    print("Weight should be greater than 0, try again")
+                    print("Weight should be greater than 0, try again!")
             except ValueError:
                 weight = None
-                print("Weight should be a float value, try again")
+                print("Weight should be a float value, try again!")
                 continue
 
         for i in range(len(self.list_of_fishes)):
@@ -161,9 +164,7 @@ class Seller(FishShop):
 class Buyer:
     list_of_bought_fishes = []
     money_spent = int
-
-    def __init__(self):
-        self.money_amount = float(input("How much money do you have? "))
+    money_amount = None
 
     def buy_fish(self):
         while True:
@@ -184,10 +185,10 @@ class Buyer:
                 if weight > 0:
                     break
                 else:
-                    print("Weight should be greater than 0, try again")
+                    print("Weight should be greater than 0, try again!")
             except ValueError:
                 weight = None
-                print("Weight should be a float value, try again")
+                print("Weight should be a float value, try again!")
                 continue
 
         for i in range(len(FishShop.list_of_fishes)):
@@ -200,7 +201,7 @@ class Buyer:
                         self.money_amount -= self.money_spent
                         print("\nMoney spent: " + str(self.money_spent))
                         print("You funds after buying: " + str(self.money_amount))
-                        print("Your bag [name, weight]: " + str(self.list_of_bought_fishes))
+                        print("Your bag [name, weight]: " + str(self.list_of_bought_fishes) + "\n")
                     else:
                         print("You don't have enough money, try again!")
                         self.buy_fish()
@@ -217,28 +218,104 @@ def main():
         print("Check sorting_key value in __main__")
         raise ValueError()
 
-    print("\n---------Welcome to FishShop!---------\n\nNow, please add some fishes.\n"
-          "To do that, just follow the instructions below:\n")
+    menu_options = {
+        1: 'Add fish to the store',
+        2: 'Get sorted fish list',
+        3: 'Cast out old fish',
+        4: 'Sell fish',
+        5: 'Buy fish',
+        6: 'Exit',
+    }
 
     shop = FishShop()
-
-    number_of_fishes = int(input("How many fishes do you want to add to the store? "))
-    print()
-
-    for i in range(1, number_of_fishes+1):
-        iteration = inflect.engine()
-        print("Enter " + iteration.number_to_words(iteration.ordinal(i)) + " fish name: ", end="")
-        shop.add_fish()
-
-    shop.get_sorted_fish_list()
-    shop.cast_out_old_fish()
-
     seller = Seller()
-    seller.sell_fish()
-
-    print("\n---------Hi, dear buyer!---------\n")
     buyer = Buyer()
-    buyer.buy_fish()
+    first_buyer = True
+
+    def print_menu():
+        time.sleep(0.7)
+        print("Menu:")
+        for key in menu_options.keys():
+            print(key, '--', menu_options[key])
+        print()
+
+    def menu_option1_add():
+        while True:
+            try:
+                number_of_fishes = int(input("How many fishes do you want to add to the store? "))
+                print()
+                break
+            except ValueError:
+                print("Invalid input. Please enter an integer value")
+                number_of_fishes = None
+                continue
+
+        for i in range(1, number_of_fishes + 1):
+            iteration = inflect.engine()
+            print("Enter " + iteration.number_to_words(iteration.ordinal(i)) + " fish name: ", end="")
+            shop.add_fish()
+
+    def menu_option2_sort():
+        shop.get_sorted_fish_list()
+
+    def menu_option3_cast_out():
+        shop.cast_out_old_fish()
+
+    def menu_option4_sell():
+        seller.sell_fish()
+
+    def menu_option5_buy():
+        nonlocal first_buyer
+        nonlocal buyer
+        if first_buyer:
+            print("\n---------Hi, dear buyer!---------\n")
+            while True:
+                try:
+                    Buyer.money_amount = int(input("How much money do you have? "))
+                    print()
+                    break
+                except ValueError:
+                    print("Invalid input. Please enter an integer value")
+                    continue
+            buyer.buy_fish()
+            first_buyer = False
+        else:
+            buyer.buy_fish()
+
+    def menu_option6_exit():
+        for x in range(0, 4):
+            b = "Quitting" + "." * x
+            print("\r", b, end="")
+            time.sleep(0.5)
+        exit()
+
+    print("\n---------Welcome to FishShop!---------\n\n"
+          "You can see the list of options below:\n")
+
+    while True:
+        print_menu()
+        while True:
+            try:
+                option = int(input('Enter your choice: '))
+                break
+            except ValueError:
+                print("Invalid input. Please enter a number!")
+                option = None
+                continue
+        if option == 1:
+            menu_option1_add()
+        elif option == 2:
+            menu_option2_sort()
+        elif option == 3:
+            menu_option3_cast_out()
+        elif option == 4:
+            menu_option4_sell()
+        elif option == 5:
+            menu_option5_buy()
+        elif option == 6:
+            menu_option6_exit()
+        else:
+            print('Invalid option. Please enter a number between 1 and 6.')
 
 
 if __name__ == '__main__':
