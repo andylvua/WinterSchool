@@ -13,7 +13,7 @@ from operator import itemgetter
 import inflect
 
 __author__ = "Andrew Yaroshevych and Oles Pasirskyi"
-__version__ = "2.0"
+__version__ = "2.2"
 __email__ = "andrii.yaroshevych.ir.2021@lpnu.ua, oles.pasirskyi.ir.2021@lpnu.ua"
 __status__ = "Production"
 
