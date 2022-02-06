@@ -12,42 +12,12 @@ import time
 from operator import itemgetter
 import inflect
 import config
+from cprint import print_ok, print_warning, print_error, print_quit
 
 __author__ = "Andrew Yaroshevych and Oles Pasirskyi"
 __version__ = "2.3"
 __email__ = "andrii.yaroshevych.ir.2021@lpnu.ua, oles.pasirskyi.ir.2021@lpnu.ua"
 __status__ = "Production"
-
-
-class Bcolors:
-    HEADER = '\033[95m'
-    BLUE = '\033[94m'
-    CYAN = '\033[96m'
-    GREEN = '\033[92m'
-    WARNING = '\033[93m'
-    ERROR = '\033[91m'
-    END = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
-
-def print_ok(message):
-    print(Bcolors.GREEN + message + Bcolors.END)
-
-
-def print_warning(message):
-    print(Bcolors.WARNING + message + Bcolors.END)
-
-
-def print_error(message):
-    print(Bcolors.ERROR + message + Bcolors.END)
-
-
-def print_quit():
-    for x in range(0, 4):
-        b = "Quitting" + "." * x
-        print("\r", Bcolors.ERROR + b + Bcolors.END, end="")
-        time.sleep(0.5)
 
 
 class Fish:
