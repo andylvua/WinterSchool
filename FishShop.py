@@ -3,6 +3,7 @@ This program provides you with a simple functionality for fish shop management.
 Here you can add fish to the store, sort them as you wish,
 sell them, or even cast them out if they are expired.
 Also, you can be a buyer. See your available cash and fishes in a bag.
+
 For further information please see our GitHub repository:
 https://github.com/andylvua/WinterSchool
 """
@@ -10,13 +11,12 @@ https://github.com/andylvua/WinterSchool
 import time
 from operator import itemgetter
 import inflect
+import config
 
 __author__ = "Andrew Yaroshevych and Oles Pasirskyi"
-__version__ = "2.2"
+__version__ = "2.3"
 __email__ = "andrii.yaroshevych.ir.2021@lpnu.ua, oles.pasirskyi.ir.2021@lpnu.ua"
 __status__ = "Production"
-
-import config
 
 
 class Bcolors:
