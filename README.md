@@ -9,6 +9,23 @@
 >![](FishShop.drawio.png)
 
 **To find project code, please see [FishShop.py](FishShop.py) file.**
+> :warning: This program requires ```inflect``` module installation. Installation instructions is provided below.
+> 
+> To check actual working version for this module please see [required_modules.txt](required_modules.txt).
+> 
+> Remember, you could always use ```pip install -r required_modules.txt``` to automatically install required version of all modules that are used in project.
+
+<br /> 
+<br /> 
+
+**Manual ```Inflect``` module installation:**
+> :exclamation: Installing to your IDE. If you want to install it systemwide or just having some troubles please visit [docs.python.org](https://docs.python.org/3/installing/index.html)
+>
+> 
+> In your environmental terminal type **```pip install inflect==<version>```**.
+> 
+> Notice, sometimes, you'll need to use ```pip3``` instead of ```pip```.
+
 
 <br /> 
 <br /> 
@@ -21,14 +38,21 @@ _**True**_ stands for a decreasing order sort, _**False**_ stands for an increas
 ``` python
     FishShop.sorting_key = "name" 
 ```
-Here, please enter what will be the sorting key.
+**Here**, please enter what will be the sorting key.
 
 <br /> 
 
-> :warning: The only allowed values for **sorting_key** are **_name_**, **_price_** and **_weight_**. Otherwise, the program will raise **ValueError**.
+> :warning: The only allowed values for **sorting_key** are **_name_**, **_price_** and **_weight_**. 
+> 
+> Otherwise, the program will raise **ValueError**.
 
 ## Clouds. Lesson 4
 
 > Cloud structure diagram. Represents simple explanation of how servers work and how they are managed.
 >
 >![](Cloud.drawio.png)
+
+## Homework #1. Film studio
+> Film studio management program structure diagram (variant 33). Created with [diagrams.net](https://www.diagrams.net/) for homework assignment.
+>
+>![](https://github.com/andylvua/WinterSchool/blob/f87aefc497b74da83c06924f9b4cd7c3a6a3c11c/HomeWork%20%231/HomeWork.drawio.png)
