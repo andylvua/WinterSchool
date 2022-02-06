@@ -246,7 +246,7 @@ class Buyer:
                                     desired_price_decimal -= desired_discount / 100
                                     break
                                 elif desired_discount > FishShop.max_discount:
-                                    print_warning("Seller rejected your proposition, try lowering your desired discount")
+                                    print_warning("Seller rejected your proposition, try lowering desired discount")
                                     continue
                                 else:
                                     print_warning("Discount should be greater than 0, try again!")
@@ -259,8 +259,8 @@ class Buyer:
                         self.list_of_bought_fishes.append([fish_name, weight])
                         self.money_amount -= self.money_spent
                         print("\nMoney spent: " + str(self.money_spent))
-                        print("You funds after buying: " + str(self.money_amount))
-                        print_ok("Your bag [name, weight]: " + str(self.list_of_bought_fishes) + "\n")
+                        print("Your funds after buying: " + str(self.money_amount))
+                        print_ok("Your shopping bag [Fish name, weight]: " + str(self.list_of_bought_fishes) + "\n")
                     else:
                         print_warning("You don't have enough money, try again!")
                         self.buy_fish()
