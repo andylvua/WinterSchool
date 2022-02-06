@@ -241,12 +241,12 @@ class Buyer:
                     if haggle_proposition == "Y":
                         while True:
                             try:
-                                desired_discount = float(input("What discount do you want (in percents)?"))
+                                desired_discount = float(input("What discount do you want (in percents)? "))
                                 if 0 < desired_discount <= FishShop.max_discount:
                                     desired_price_decimal -= desired_discount / 100
                                     break
                                 elif desired_discount > FishShop.max_discount:
-                                    print("Seller`s response to your request is negative, try to lower your discount")
+                                    print_warning("Seller rejected your proposition, try lowering your desired discount")
                                     continue
                                 else:
                                     print_warning("Discount should be greater than 0, try again!")
