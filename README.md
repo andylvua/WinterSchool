@@ -48,6 +48,10 @@ _**True**_ stands for a decreasing order sort, _**False**_ stands for an increas
     max_discount = 15.0
 ```
 **This** variable is responsible for the maximum discount in percents with which you will sell fish to your customers. 
+
+> :warning: **max_discount** value should be in range from **_0 to 100_**. 
+> 
+> Otherwise, the program will raise **ValueError**.
     
 <br />
 
