@@ -55,4 +55,4 @@ _**True**_ stands for a decreasing order sort, _**False**_ stands for an increas
 ## Homework #1. Film studio
 > Film studio management program structure diagram (variant 33). Created with [diagrams.net](https://www.diagrams.net/) for homework assignment.
 >
->![](https://github.com/andylvua/WinterSchool/blob/f87aefc497b74da83c06924f9b4cd7c3a6a3c11c/HomeWork%20%231/HomeWork.drawio.png)
+>![](/Homework/HomeWork.drawio.png)
