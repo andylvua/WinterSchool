@@ -30,21 +30,27 @@
 <br /> 
 <br /> 
 
-**Pay attention, that you can set your desired sorting order and sorting key at the end of the program.**
+**Pay attention, to set your desired settings for sorting order, sorting key and maximum allowed discount in your shop please see configuration file [config.py](config.py).**
 ``` python
-    FishShop.sorting_reverse = True 
+    sorting_reverse = True 
 ```
 _**True**_ stands for a decreasing order sort, _**False**_ stands for an increasing order sort.
 ``` python
-    FishShop.sorting_key = "name" 
+    sorting_key = "name" 
 ```
 **Here**, please enter what will be the sorting key.
-
-<br /> 
 
 > :warning: The only allowed values for **sorting_key** are **_name_**, **_price_** and **_weight_**. 
 > 
 > Otherwise, the program will raise **ValueError**.
+    
+``` python   
+    max_discount = 15.0
+```
+**This** variable is responsible for the maximum discount in percents with which you will sell fish to your customers. 
+    
+<br />
+
 
 ## Clouds. Lesson 4
 
