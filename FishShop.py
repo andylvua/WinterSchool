@@ -18,6 +18,37 @@ __email__ = "andrii.yaroshevych.ir.2021@lpnu.ua, oles.pasirskyi.ir.2021@lpnu.ua"
 __status__ = "Production"
 
 
+class Bcolors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    ERROR = '\033[91m'
+    END = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+
+def print_ok(message):
+    print(Bcolors.GREEN + message + Bcolors.END)
+
+
+def print_warning(message):
+    print(Bcolors.WARNING + message + Bcolors.END)
+
+
+def print_error(message):
+    print(Bcolors.ERROR + message + Bcolors.END)
+
+
+def print_quit():
+    for x in range(0, 4):
+        b = "Quitting" + "." * x
+        print("\r", Bcolors.ERROR + b + Bcolors.END, end="")
+        time.sleep(0.5)
+
+
 class Fish:
     def __init__(self) -> None:
         self.name = input("Enter fish name: ")
@@ -38,7 +69,7 @@ class FishShop:
             if fish_name.replace(" ", "").isalpha():
                 break
             else:
-                print("Name should contain only letters, please try again!")
+                print_warning("Name should contain only letters, please try again!")
                 continue
 
         while True:
@@ -47,10 +78,10 @@ class FishShop:
                 if fish_price_in_uah_per_kilo > 0:
                     break
                 else:
-                    print("Price should be greater than 0, try again!")
+                    print_warning("Price should be greater than 0, try again!")
             except ValueError:
                 fish_price_in_uah_per_kilo = None
-                print("Price should be a float value, try again!")
+                print_error("Price should be a float value, try again!")
                 continue
 
         while True:
@@ -59,14 +90,14 @@ class FishShop:
                 if fish_weight > 0:
                     break
                 else:
-                    print("Weight should be greater than 0, try again!")
+                    print_warning("Weight should be greater than 0, try again!")
             except ValueError:
                 fish_weight = None
-                print("Weight should be a float value, try again!")
+                print_error("Weight should be a float value, try again!")
                 continue
 
         self.list_of_fishes.append([fish_name, fish_price_in_uah_per_kilo, fish_weight])
-        print("Fish added successfully.\n")
+        print_ok("Fish added successfully.\n")
 
     def get_sorted_fish_list(self):
         if self.sorting_key == "name":
@@ -94,9 +125,9 @@ class FishShop:
                 if self.sublist_search(fish_name):
                     break
                 else:
-                    print("Fish is not found, please try again!")
+                    print_warning("Fish is not found, please try again!")
             else:
-                print("Name should contain only letters, please try again!")
+                print_warning("Name should contain only letters, please try again!")
                 continue
 
         while True:
@@ -105,20 +136,20 @@ class FishShop:
                 if weight > 0:
                     break
                 else:
-                    print("Weight should be greater than 0, try again!")
+                    print_warning("Weight should be greater than 0, try again!")
             except ValueError:
                 weight = None
-                print("Weight should be a float value, try again!")
+                print_error("Weight should be a float value, try again!")
                 continue
 
         for i in range(len(self.list_of_fishes)):
             if self.list_of_fishes[i][0] == fish_name:
                 if self.list_of_fishes[i][2] > weight:
                     self.list_of_fishes[i][2] -= weight
-                    print("\nCasted out successfully.")
+                    print_ok("\nCasted out successfully.")
                     print("List of fishes after casting out: %s" % self.list_of_fishes + "\n")
                 else:
-                    print("There is not enough fish to cast out, try again!")
+                    print_warning("There is not enough fish to cast out, try again!")
                     self.cast_out_old_fish()
 
 
@@ -130,9 +161,9 @@ class Seller(FishShop):
                 if self.sublist_search(fish_name):
                     break
                 else:
-                    print("Fish is not found, please try again!")
+                    print_warning("Fish is not found, please try again!")
             else:
-                print("Name should contain only letters, please try again!")
+                print_warning("Name should contain only letters, please try again!")
                 continue
 
         while True:
@@ -141,23 +172,23 @@ class Seller(FishShop):
                 if weight > 0:
                     break
                 else:
-                    print("Weight should be greater than 0, try again!")
+                    print_warning("Weight should be greater than 0, try again!")
             except ValueError:
                 weight = None
-                print("Weight should be a float value, try again!")
+                print_error("Weight should be a float value, try again!")
                 continue
 
         for i in range(len(self.list_of_fishes)):
             if self.list_of_fishes[i][0] == fish_name:
                 if self.list_of_fishes[i][2] > weight:
                     self.list_of_fishes[i][2] -= weight
-                    print("\nSold successfully.")
+                    print_ok("\nSold successfully.")
                 else:
-                    print("There is not enough fish to sell, try again!")
+                    print_warning("There is not enough fish to sell, try again!")
                     self.sell_fish()
 
                 revenue = int(self.list_of_fishes[i][1]) * weight
-                print("Selling revenue is: " + str(revenue))
+                print_ok("Selling revenue is: " + str(revenue))
                 print("List of fishes after selling: %s" % self.list_of_fishes + "\n")
 
 
@@ -174,9 +205,9 @@ class Buyer:
                 if FishShop.sublist_search(FishShop(), fish_name):
                     break
                 else:
-                    print('Fish is not found, please try again!')
+                    print_warning('Fish is not found, please try again!')
             else:
-                print("Name should contain only letters, please try again!")
+                print_warning("Name should contain only letters, please try again!")
                 continue
 
         while True:
@@ -185,10 +216,10 @@ class Buyer:
                 if weight > 0:
                     break
                 else:
-                    print("Weight should be greater than 0, try again!")
+                    print_warning("Weight should be greater than 0, try again!")
             except ValueError:
                 weight = None
-                print("Weight should be a float value, try again!")
+                print_error("Weight should be a float value, try again!")
                 continue
 
         for i in range(len(FishShop.list_of_fishes)):
@@ -201,12 +232,12 @@ class Buyer:
                         self.money_amount -= self.money_spent
                         print("\nMoney spent: " + str(self.money_spent))
                         print("You funds after buying: " + str(self.money_amount))
-                        print("Your bag [name, weight]: " + str(self.list_of_bought_fishes) + "\n")
+                        print_ok("Your bag [name, weight]: " + str(self.list_of_bought_fishes) + "\n")
                     else:
-                        print("You don't have enough money, try again!")
+                        print_warning("You don't have enough money, try again!")
                         self.buy_fish()
                 else:
-                    print("Sorry, here is not enough fish to sell to you, try again!")
+                    print_warning("Sorry, here is not enough fish to sell to you, try again!")
                     self.buy_fish()
 
     def haggle(self, fish_price_in_uah):
@@ -215,7 +246,7 @@ class Buyer:
 
 def main():
     if FishShop.sorting_key not in ('name', 'price', 'weight'):
-        print("Check sorting_key value in __main__")
+        print_error("Check sorting_key value in __main__")
         raise ValueError()
 
     menu_options = {
@@ -224,7 +255,7 @@ def main():
         3: 'Cast out old fish',
         4: 'Sell fish',
         5: 'Buy fish',
-        6: 'Exit',
+        6: 'Quit',
     }
 
     shop = FishShop()
@@ -246,7 +277,7 @@ def main():
                 print()
                 break
             except ValueError:
-                print("Invalid input. Please enter an integer value")
+                print_error("Invalid input. Please enter an integer value")
                 number_of_fishes = None
                 continue
 
@@ -267,26 +298,26 @@ def main():
     def menu_option5_buy():
         nonlocal first_buyer
         nonlocal buyer
-        if first_buyer:
-            print("\n---------Hi, dear buyer!---------\n")
-            while True:
-                try:
-                    Buyer.money_amount = int(input("How much money do you have? "))
-                    print()
-                    break
-                except ValueError:
-                    print("Invalid input. Please enter an integer value")
-                    continue
-            buyer.buy_fish()
-            first_buyer = False
+        if FishShop.list_of_fishes:
+            if first_buyer:
+                print("\n---------Hi, dear buyer!---------\n")
+                while True:
+                    try:
+                        Buyer.money_amount = int(input("How much money do you have? "))
+                        print()
+                        break
+                    except ValueError:
+                        print_error("Invalid input. Please enter an integer value")
+                        continue
+                buyer.buy_fish()
+                first_buyer = False
+            else:
+                buyer.buy_fish()
         else:
-            buyer.buy_fish()
+            print_warning("\nSorry, the store is empty, please add some fishes first.\n")
 
     def menu_option6_exit():
-        for x in range(0, 4):
-            b = "Quitting" + "." * x
-            print("\r", b, end="")
-            time.sleep(0.5)
+        print_quit()
         exit()
 
     print("\n---------Welcome to FishShop!---------\n\n"
@@ -299,7 +330,7 @@ def main():
                 option = int(input('Enter your choice: '))
                 break
             except ValueError:
-                print("Invalid input. Please enter a number!")
+                print_error("Invalid input. Please enter a number!")
                 option = None
                 continue
         if option == 1:
@@ -315,7 +346,7 @@ def main():
         elif option == 6:
             menu_option6_exit()
         else:
-            print('Invalid option. Please enter a number between 1 and 6.')
+            print_error("\nInvalid option. Please enter a number between 1 and 6.\n")
 
 
 if __name__ == '__main__':
