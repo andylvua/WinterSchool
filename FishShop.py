@@ -3,7 +3,6 @@ This program provides you with a simple functionality for fish shop management.
 Here you can add fish to the store, sort them as you wish,
 sell them, or even cast them out if they are expired.
 Also, you can be a buyer. See your available cash and fishes in a bag.
-
 For further information please see our GitHub repository:
 https://github.com/andylvua/WinterSchool
 """
@@ -62,6 +61,7 @@ class FishShop:
     list_of_fishes = []
     sorting_reverse = None
     sorting_key = None
+    max_discount = None
 
     def add_fish(self) -> None:
         while True:
@@ -226,8 +226,34 @@ class Buyer:
             if FishShop.list_of_fishes[i][0] == fish_name:
                 if FishShop.list_of_fishes[i][2] >= weight:
                     FishShop.list_of_fishes[i][2] -= weight
-                    if ((FishShop.list_of_fishes[i][1]) * weight) <= self.money_amount:
-                        self.money_spent = (FishShop.list_of_fishes[i][1]) * weight
+                    while True:
+                        haggle_proposition = str(input("Do you want to haggle with the seller?\n(Y or N) ")).upper()
+                        if haggle_proposition in ("Y", "N"):
+                            break
+                        else:
+                            print_warning("Answer must be Y or N, try again!")
+                            continue
+
+                    desired_price_decimal = 1
+
+                    if haggle_proposition == "Y":
+                        while True:
+                            try:
+                                desired_discount = float(input("What discount do you want (in percents)?"))
+                                if 0 < desired_discount <= FishShop.max_discount:
+                                    desired_price_decimal -= desired_discount / 100
+                                    break
+                                elif desired_discount > FishShop.max_discount:
+                                    print("Seller`s response to your request is negative, try to lower your discount")
+                                    continue
+                                else:
+                                    print_warning("Discount should be greater than 0, try again!")
+                            except ValueError:
+                                print_error("Discount should be a float value, try again!")
+                                continue
+
+                    if ((FishShop.list_of_fishes[i][1]) * weight * desired_price_decimal) <= self.money_amount:
+                        self.money_spent = (FishShop.list_of_fishes[i][1]) * weight * desired_price_decimal
                         self.list_of_bought_fishes.append([fish_name, weight])
                         self.money_amount -= self.money_spent
                         print("\nMoney spent: " + str(self.money_spent))
@@ -239,9 +265,6 @@ class Buyer:
                 else:
                     print_warning("Sorry, here is not enough fish to sell to you, try again!")
                     self.buy_fish()
-
-    def haggle(self, fish_price_in_uah):
-        pass
 
 
 def main():
@@ -352,4 +375,5 @@ def main():
 if __name__ == '__main__':
     FishShop.sorting_reverse = True      # "True" if you want from largest to smallest, "False" to reverse.
     FishShop.sorting_key = "price"       # What do you want to sort fish_list by? (name, price or weight)!
+    FishShop.max_discount = 15.0            # What will be the max discount in %
     main()
