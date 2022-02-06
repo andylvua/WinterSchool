@@ -271,7 +271,12 @@ class Buyer:
 
 def main():
     if FishShop.sorting_key not in ('name', 'price', 'weight'):
-        print_error("Check sorting_key value in __main__")
+        print_error("\nCheck sorting_key value in config.py\nThe only allowed values "
+                    "for sorting_key are 'name', 'price' and 'weight'.")
+        raise ValueError()
+
+    if FishShop.max_discount not in range(0, 100):
+        print_error("\nCheck max_discount value in config.py, it should be in range from 0 to 100")
         raise ValueError()
 
     menu_options = {
