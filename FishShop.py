@@ -16,6 +16,8 @@ __version__ = "2.2"
 __email__ = "andrii.yaroshevych.ir.2021@lpnu.ua, oles.pasirskyi.ir.2021@lpnu.ua"
 __status__ = "Production"
 
+import config
+
 
 class Bcolors:
     HEADER = '\033[95m'
@@ -373,7 +375,7 @@ def main():
 
 
 if __name__ == '__main__':
-    FishShop.sorting_reverse = True      # "True" if you want from largest to smallest, "False" to reverse.
-    FishShop.sorting_key = "price"       # What do you want to sort fish_list by? (name, price or weight)!
-    FishShop.max_discount = 15.0            # What will be the max discount in %
+    FishShop.sorting_reverse = config.sorting_reverse
+    FishShop.sorting_key = config.sorting_key
+    FishShop.max_discount = config.max_discount
     main()
