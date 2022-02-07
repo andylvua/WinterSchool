@@ -13,7 +13,11 @@
 > 
 > To check actual working version for this module please see [requirements.txt](requirements.txt).
 > 
-> Remember, you could always use ```pip install -r requirements.txt``` to automatically install required version of all modules that are used in project.
+> Remember, you could always use 
+> ``` CSS
+> pip install -r requirements.txt
+> ``` 
+> to automatically install required version of all modules that are used in project.
 
 <br /> 
 <br /> 
