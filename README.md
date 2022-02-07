@@ -70,3 +70,10 @@ _**True**_ stands for a decreasing order sort, _**False**_ stands for an increas
 > Film studio management program structure diagram (variant 33). Created with [diagrams.net](https://www.diagrams.net/) for homework assignment.
 >
 >![](/Homework/HomeWork.drawio.png)
+    
+<br /> 
+<br /> 
+    
+> [**Oles Pasirskyi**](https://github.com/wertylu) diagram. Milk shop management program structure (variant 32).
+>
+>![](/Homework/HomeWork_Oles.drawio.png)
