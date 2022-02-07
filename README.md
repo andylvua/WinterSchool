@@ -4,16 +4,28 @@
 > Contributed: [Oles Pasirskyi](https://github.com/wertylu)
 ## Fish Shop. Lesson 1-3
 
-> Fish Shop classes diagram. Created with [diagrams.net](https://www.diagrams.net/) using UML language.
+**To find project code, please see [FishShop.py](FishShop.py) file.**
+
+This program provides you with a simple functionality for fish shop management.
+Here you can add fish to the store, sort them as you wish,
+sell them, or even cast them out if they are expired.  
+Also, you can be a buyer. Haggle with the seller and see your available cash and bought fishes in a bag.
+
+<br /> 
+<br /> 
+
+ **Fish Shop classes diagram. Created with [diagrams.net](https://www.diagrams.net/) using UML language.**
 >
 >![](FishShop.drawio.png)
 
-**To find project code, please see [FishShop.py](FishShop.py) file.**
-> :warning: This program requires ```inflect``` module installation. Installation instructions is provided below.
+<br /> 
+<br /> 
+
+ :warning: **This program requires ```inflect``` module installation. Installation instructions is provided below.**
 > 
 > To check actual working version for this module please see [requirements.txt](requirements.txt).
 > 
-> Remember, you could always use 
+> **Remember**, you could always use 
 > ``` CSS
 > pip install -r requirements.txt
 > ``` 
@@ -22,7 +34,8 @@
 <br /> 
 <br /> 
 
-**Manual ```Inflect``` module installation:**
+ **Manual ```Inflect``` module installation:**
+> 
 > :exclamation: Installing to your IDE. If you want to install it system-wide or just having some troubles please visit [docs.python.org](https://docs.python.org/3/installing/index.html)
 >
 > 
@@ -62,18 +75,20 @@ _**True**_ stands for a decreasing order sort, _**False**_ stands for an increas
 
 ## Clouds. Lesson 4
 
-> Cloud structure diagram. Represents simple explanation of how servers work and how they are managed.
+**Cloud structure diagram. Represents simple explanation of how servers work and how they are managed.**
 >
 >![](Cloud.drawio.png)
 
+<br /> 
+<br /> 
+
 ## Homework #1. Film studio
-> Film studio management program structure diagram (variant 33). Created with [diagrams.net](https://www.diagrams.net/) for homework assignment.
+**Film studio management program structure diagram (variant 33). Created with [diagrams.net](https://www.diagrams.net/) for homework assignment.**
 >
 >![](/Homework/HomeWork.drawio.png)
     
 <br /> 
-<br /> 
-    
-> [**Oles Pasirskyi**](https://github.com/wertylu) diagram. Milk shop management program structure (variant 32).
+
+**[**Oles Pasirskyi**](https://github.com/wertylu) diagram. Milk shop management program structure (variant 32).**
 >
 >![](/Homework/HomeWork_Oles.drawio.png)
