@@ -1,4 +1,4 @@
-# WinterSchool [![Python application](https://github.com/andylvua/WinterSchool/actions/workflows/test.yml/badge.svg)](https://github.com/andylvua/WinterSchool/actions/workflows/test.yml)
+# WinterSchool [![Python application](https://github.com/andylvua/WinterSchool/actions/workflows/test.yml/badge.svg)](https://github.com/andylvua/WinterSchool/actions/workflows/test.yml) [![Python 3.6](https://img.shields.io/badge/Python-3.10.2-yellow)](https://www.python.org/downloads/release/python-3102/)
 **This is a repository for university winter school projects with Zenoviy Veres**
 
 > Contributed: [Oles Pasirskyi](https://github.com/wertylu)
@@ -34,7 +34,7 @@ Also, you can be a buyer. Haggle with the seller and see your available cash and
 <br /> 
 <br /> 
 
- **Manual ```Inflect``` module installation:**
+ **Manual ```inflect``` module installation:**
 > 
 > :exclamation: Installing to your IDE. If you want to install it system-wide or just having some troubles please visit [docs.python.org](https://docs.python.org/3/installing/index.html)
 >
@@ -47,11 +47,11 @@ Also, you can be a buyer. Haggle with the seller and see your available cash and
 <br /> 
 <br /> 
 
-**Pay attention, to set your desired settings for sorting order, sorting key and maximum allowed discount in your shop please see configuration file [config.py](config.py).**
+**Pay attention, to set your desired settings for sorting order, sorting key and maximum allowed discount in your shop please see a configuration file [config.py](config.py).**
 ``` python
     sorting_reverse = True 
 ```
-_**True**_ stands for a decreasing order sort, _**False**_ stands for an increasing order sort.
+_**True**_ stands for a decreasing order sort of **fish_list**, _**False**_ stands for an increasing order sort.
 ``` python
     sorting_key = "name" 
 ```
