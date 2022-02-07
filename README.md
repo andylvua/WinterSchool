@@ -1,4 +1,4 @@
-# WinterSchool
+# WinterSchool [![Python application](https://github.com/andylvua/WinterSchool/actions/workflows/test.yml/badge.svg)](https://github.com/andylvua/WinterSchool/actions/workflows/test.yml)
 **This is a repository for university winter school projects with Zenoviy Veres**
 
 > Contributed: [Oles Pasirskyi](https://github.com/wertylu)
@@ -13,7 +13,11 @@
 > 
 > To check actual working version for this module please see [requirements.txt](requirements.txt).
 > 
-> Remember, you could always use ```pip install -r requirements.txt``` to automatically install required version of all modules that are used in project.
+> Remember, you could always use 
+> ``` CSS
+> pip install -r requirements.txt
+> ``` 
+> to automatically install required version of all modules that are used in project.
 
 <br /> 
 <br /> 
