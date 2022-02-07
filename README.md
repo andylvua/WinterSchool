@@ -11,15 +11,15 @@
 **To find project code, please see [FishShop.py](FishShop.py) file.**
 > :warning: This program requires ```inflect``` module installation. Installation instructions is provided below.
 > 
-> To check actual working version for this module please see [required_modules.txt](required_modules.txt).
+> To check actual working version for this module please see [requirements.txt](requirements.txt).
 > 
-> Remember, you could always use ```pip install -r required_modules.txt``` to automatically install required version of all modules that are used in project.
+> Remember, you could always use ```pip install -r requirements.txt``` to automatically install required version of all modules that are used in project.
 
 <br /> 
 <br /> 
 
 **Manual ```Inflect``` module installation:**
-> :exclamation: Installing to your IDE. If you want to install it systemwide or just having some troubles please visit [docs.python.org](https://docs.python.org/3/installing/index.html)
+> :exclamation: Installing to your IDE. If you want to install it system-wide or just having some troubles please visit [docs.python.org](https://docs.python.org/3/installing/index.html)
 >
 > 
 > In your environmental terminal type **```pip install inflect==<version>```**.
