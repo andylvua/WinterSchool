@@ -1,7 +1,10 @@
 # WinterSchool [![Python application](https://github.com/andylvua/WinterSchool/actions/workflows/test.yml/badge.svg)](https://github.com/andylvua/WinterSchool/actions/workflows/test.yml) [![Python 3.6](https://img.shields.io/badge/Python-3.10.2-yellow)](https://www.python.org/downloads/release/python-3102/)
 **This is a repository for university winter school projects with Zenoviy Veres**
-
 > Contributed: [Oles Pasirskyi](https://github.com/wertylu)
+
+
+### See also: [Flask practice. Lesson 5](#flask-practice-lesson-5)
+
 ## Fish Shop. Lesson 1-3
 
 **To find project code, please see [FishShop.py](FishShop.py) file.**
@@ -92,3 +95,11 @@ _**True**_ stands for a decreasing order sort of **fish_list**, _**False**_ stan
 **[**Oles Pasirskyi**](https://github.com/wertylu) diagram. Milk shop management program structure (variant 32).**
 >
 >![](/Homework/HomeWork_Oles.drawio.png)
+
+<br /> 
+<br /> 
+ 
+## Flask practice. Lesson 5
+ >On this lesson we've created a simple Flask app to demonstrate how this framework works
+ 
+**Please see my [FlaskPractice](https://github.com/andylvua/FlaskPractice) GitHub repository.**
