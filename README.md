@@ -103,3 +103,10 @@ _**True**_ stands for a decreasing order sort of **fish_list**, _**False**_ stan
  >On this lesson we've created a simple Flask app to demonstrate how this framework works
  
 **Please see my [FlaskPractice](https://github.com/andylvua/FlaskPractice) GitHub repository.**
+
+ 
+ ## Security policy
+>**Please see [SECURITY.md](SECURITY.md)**
+ 
+ ## License 
+**[MIT](https://choosealicense.com/licenses/mit/)**
